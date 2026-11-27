@@ -497,6 +497,36 @@ def create_admin():
     print("Compte administrateur créé. Le mot de passe n'est pas enregistré en clair.")
 
 
+def initialize_admin_from_environment():
+    telephone = normaliser_telephone(os.environ.get("ADMIN_PHONE", ""))
+    password = os.environ.get("ADMIN_PASSWORD", "")
+    if not telephone or not password:
+        return
+    if not PHONE_PATTERN.fullmatch(telephone) or len(password) < 10:
+        raise RuntimeError("La configuration ADMIN_PHONE ou ADMIN_PASSWORD est invalide.")
+
+    initialize_database()
+    with connect_database() as database:
+        existing = database.execute(
+            "SELECT id, role FROM users WHERE telephone = ?", (telephone,)
+        ).fetchone()
+        if existing is None:
+            database.execute(
+                """
+                INSERT INTO users (nom, prenom, telephone, email, role, mot_de_passe)
+                VALUES (?, ?, ?, ?, 'admin', ?)
+                """,
+                ("Administrateur", "Root", telephone, "", generate_password_hash(password, method="scrypt")),
+            )
+        elif existing["role"] != "admin":
+            database.execute(
+                "UPDATE users SET role = 'admin' WHERE id = ?", (existing["id"],)
+            )
+
+
+initialize_admin_from_environment()
+
+
 def run():
     parser = argparse.ArgumentParser(description="Serveur SOS Artisan")
     parser.add_argument("command", nargs="?", choices=("create-admin", "init-db"))
