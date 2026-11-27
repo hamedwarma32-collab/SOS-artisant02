@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#007bff">
+    <link rel="manifest" href="../manifest.json">
+    <title>Historique des demandes | SOS Artisan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header id="messi">
+        <a href="index.html" aria-label="Retour à l'accueil">
+            <img src="../images/IMG_E1718.JPG" alt="SOS Artisan" width="80">
+        </a>
+        <nav id="menu">
+            <a href="index.html" class="inscription-link">Accueil</a>
+            <a href="index.html#formulaireArtisan" class="inscription-link">Nouvelle demande</a>
+        </nav>
+    </header>
+
+    <main class="page-interne">
+        <h1>Historique des demandes</h1>
+        <p class="message-page">Les demandes envoyées depuis ce navigateur apparaissent ici. Elles ne sont pas transmises à un artisan.</p>
+        <div id="historiqueDemandes" class="historique-liste" aria-live="polite"></div>
+    </main>
+
+    <footer id="footer">
+        <a href="index.html" class="footer-icon" aria-label="Accueil" title="Accueil"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
+        <a href="services.html" class="footer-icon" aria-label="Services" title="Services"><i class="fa-solid fa-toolbox" aria-hidden="true"></i></a>
+        <a href="historique.html" class="footer-icon" aria-label="Historique" title="Historique"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></a>
+        <a href="messages.html" class="footer-icon" aria-label="Messages" title="Messages"><i class="fa-solid fa-comments" aria-hidden="true"></i></a>
+        <a href="profil.html" class="footer-icon" aria-label="Profil" title="Profil"><i class="fa-solid fa-user" aria-hidden="true"></i></a>
+    </footer>
+    <button id="boutonInstallerApplication" type="button" hidden>Installer l'application</button>
+    <script src="../js/app.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/historique.js"></script>
+</body>
+</html>

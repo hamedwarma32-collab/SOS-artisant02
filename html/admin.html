@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#007bff">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../style.css">
+    <title>Administration | SOS Artisan</title>
+</head>
+<body>
+    <header id="messi">
+        <a href="index.html" aria-label="Retour à l'accueil">
+            <img src="../images/IMG_E1718.JPG" alt="SOS Artisan" width="80">
+        </a>
+        <nav id="menu"><a href="profil.html" class="inscription-link">Mon profil</a></nav>
+    </header>
+
+    <main class="page-interne admin-page">
+        <h1>Administration</h1>
+        <p>Gestion sécurisée des comptes SOS Artisan.</p>
+        <section id="adminConnexion" class="connexion-messagerie">
+            <h2>Accès administrateur</h2>
+            <form id="formulaireAdminConnexion" class="formulaire-admin-connexion">
+                <label for="telephoneAdmin">Téléphone administrateur</label>
+                <input id="telephoneAdmin" type="tel" autocomplete="username" required>
+                <label for="motDePasseAdmin">Mot de passe</label>
+                <input id="motDePasseAdmin" type="password" autocomplete="current-password" required>
+                <button type="submit">Se connecter</button>
+            </form>
+            <p id="messageAdmin" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="tableauAdmin" hidden>
+            <div class="admin-resume">
+                <article><strong id="totalComptes">0</strong><span>Comptes</span></article>
+                <article><strong id="totalArtisans">0</strong><span>Artisans</span></article>
+                <article><strong id="totalActifs">0</strong><span>Comptes actifs</span></article>
+            </div>
+            <div class="admin-entete-liste">
+                <h2>Comptes utilisateurs</h2>
+                <button id="boutonDeconnexionAdmin" type="button">Se déconnecter</button>
+            </div>
+            <label class="recherche-admin">
+                Rechercher un compte
+                <input id="rechercheAdmin" type="search" placeholder="Nom, téléphone ou e-mail">
+            </label>
+            <p id="erreurAdmin" role="status" aria-live="polite"></p>
+            <div id="listeUtilisateursAdmin" class="liste-utilisateurs-admin" aria-live="polite"></div>
+        </section>
+    </main>
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

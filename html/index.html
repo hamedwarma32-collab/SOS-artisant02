@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#007bff">
+    <link rel="manifest" href="../manifest.json">
+    <title>accueil</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   <header id="messi">
+    <div class="logo-contrainer">
+        <img src="../images/IMG_E1718.JPG" alt="la charcuterie" width="80px">
+    </div>
+    <form id="rechercheArtisans" role="search">
+        <input id="termeRecherche" type="search" placeholder="Rechercher un artisan, un métier ou une ville" aria-label="Rechercher un artisan, un métier ou une ville">
+        <button class="search-button" type="submit" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    
+    <nav id="menu">
+        <a href="connexion.html" class="inscription-link"><i class="fa-solid fa-right-to-bracket"></i> Se connecter</a>
+    </nav>
+    </header>
+    <main>
+        <h1>Touvez un bon artisan en côte d'ivoire en 10 minutes</h1>
+        <p>Service rapide,fiable et prés de chez vousun artisan qualifié en quelques clics</p>
+        <div id="bouton">
+            <a class="bouton-specialites" href="services.html">
+                <i class="fa-solid fa-toolbox" aria-hidden="true"></i>
+                <span>Découvrir toutes les spécialités</span>
+            </a>
+        </div>
+        <section class="localisation-client" aria-labelledby="titreLocalisation">
+            <h2 id="titreLocalisation">Ma localisation</h2>
+            <p>Remplissez automatiquement votre ville et votre quartier.</p>
+            <p>Coordonnées GPS transmises à BigDataCloud pour trouver l’adresse.</p>
+            <button type="button" id="boutonLocalisation">
+                <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
+                Me localiser
+            </button>
+            <p id="messageLocalisation" role="status" aria-live="polite"></p>
+            <a id="lienCarteLocalisation" class="lien-carte-localisation" target="_blank" rel="noopener noreferrer" hidden>
+                Voir ma position sur la carte
+            </a>
+        </section>
+    </main>
+    <section id="resultatsRecherche" class="resultats-recherche" aria-live="polite">
+        <h2>Artisans inscrits</h2>
+        <p>Recherchez par nom, métier, ville ou quartier.</p>
+        <div id="listeArtisans"></div>
+    </section>
+    <nav>
+    <section class="demande-artisan">
+      <h2>Demandez un artisan maintenant</h2>
+     <form id="formulaireArtisan">
+         <div class="form-grid">
+             <input type="text"
+                    id="probleme"
+                    name="probleme"
+                    placeholder="Entrez votre problème"
+                    required>
+             <select id="specialiteDemande" name="specialite" aria-label="Spécialité de l'artisan recherchée">
+                 <option value="automatique">Choisir le métier (détection automatique)</option>
+                 <option value="plomberie">Plomberie</option>
+                 <option value="electricite">Électricité</option>
+                 <option value="climatisation">Climatisation</option>
+                 <option value="maconnerie">Maçonnerie</option>
+                 <option value="menuiserie">Menuiserie</option>
+                 <option value="peinture">Peinture</option>
+                 <option value="serrurerie">Serrurerie</option>
+                 <option value="mecanique">Mécanique auto</option>
+                 <option value="jardinage">Jardinage</option>
+                 <option value="couture">Couture</option>
+                 <option value="nettoyage">Nettoyage</option>
+                 <option value="tous">Tous les métiers</option>
+             </select>
+             <input type="text"
+                    id="ville"
+                    name="ville"
+                    list="villesCoteDIvoire"
+                    placeholder="Indiquez votre ville ou commune"
+                    autocomplete="address-level2"
+                    required>
+             <datalist id="villesCoteDIvoire">
+                 <option value="Abengourou">Abengourou</option>
+                 <option value="Abidjan">Abidjan</option>
+                 <option value="Aboisso">Aboisso</option>
+                 <option value="Adiaké">Adiaké</option>
+                 <option value="Adzopé">Adzopé</option>
+                 <option value="Afféry">Afféry</option>
+                 <option value="Agboville">Agboville</option>
+                 <option value="Agnibilékrou">Agnibilékrou</option>
+                 <option value="Akoupé">Akoupé</option>
+                 <option value="Alépé">Alépé</option>
+                 <option value="Anyama">Anyama</option>
+                 <option value="Arrah">Arrah</option>
+                 <option value="Attécoubé">Attécoubé</option>
+                 <option value="Bangolo">Bangolo</option>
+                 <option value="Bédiala">Bédiala</option>
+                 <option value="Béoumi">Béoumi</option>
+                 <option value="Bettié">Bettié</option>
+                 <option value="Biankouma">Biankouma</option>
+                 <option value="Bingerville">Bingerville</option>
+                 <option value="Bloléquin">Bloléquin</option>
+                 <option value="Bongouanou">Bongouanou</option>
+                 <option value="Bondoukou">Bondoukou</option>
+                 <option value="Botro">Botro</option>
+                 <option value="Bouaflé">Bouaflé</option>
+                 <option value="Bouaké">Bouaké</option>
+                 <option value="Bouna">Bouna</option>
+                 <option value="Boundiali">Boundiali</option>
+                 <option value="Dabakala">Dabakala</option>
+                 <option value="Dabou">Dabou</option>
+                 <option value="Daloa">Daloa</option>
+                 <option value="Danané">Danané</option>
+                 <option value="Daoukro">Daoukro</option>
+                 <option value="Dimbokro">Dimbokro</option>
+                 <option value="Divo">Divo</option>
+                 <option value="Doropo">Doropo</option>
+                 <option value="Duékoué">Duékoué</option>
+                 <option value="Facobly">Facobly</option>
+                 <option value="Ferkessédougou">Ferkessédougou</option>
+                 <option value="Fresco">Fresco</option>
+                 <option value="Gagnoa">Gagnoa</option>
+                 <option value="Grand-Bassam">Grand-Bassam</option>
+                 <option value="Grand-Lahou">Grand-Lahou</option>
+                 <option value="Guiglo">Guiglo</option>
+                 <option value="Guitry">Guitry</option>
+                 <option value="Issia">Issia</option>
+                 <option value="Jacqueville">Jacqueville</option>
+                 <option value="Katiola">Katiola</option>
+                 <option value="Kong">Kong</option>
+                 <option value="Korhogo">Korhogo</option>
+                 <option value="Kouto">Kouto</option>
+                 <option value="Lakota">Lakota</option>
+                 <option value="M'Bahiakro">M'Bahiakro</option>
+                 <option value="Man">Man</option>
+                 <option value="Mankono">Mankono</option>
+                 <option value="Marcory">Marcory</option>
+                 <option value="Maféré">Maféré</option>
+                 <option value="Minignan">Minignan</option>
+                 <option value="N'Douci">N'Douci</option>
+                 <option value="Odienné">Odienné</option>
+                 <option value="Oumé">Oumé</option>
+                 <option value="Port-Bouët">Port-Bouët</option>
+                 <option value="Prikro">Prikro</option>
+                 <option value="Sassandra">Sassandra</option>
+                 <option value="San-Pédro">San-Pédro</option>
+                 <option value="Séguéla">Séguéla</option>
+                 <option value="Sipilou">Sipilou</option>
+                 <option value="Soubré">Soubré</option>
+                 <option value="Tabou">Tabou</option>
+                 <option value="Tafiré">Tafiré</option>
+                 <option value="Tanda">Tanda</option>
+                 <option value="Tiassalé">Tiassalé</option>
+                 <option value="Tingréla">Tingréla</option>
+                 <option value="Touba">Touba</option>
+                 <option value="Toulepleu">Toulepleu</option>
+                 <option value="Toumodi">Toumodi</option>
+                 <option value="Vavoua">Vavoua</option>
+                 <option value="Yamoussoukro">Yamoussoukro</option>
+                 <option value="Zagné">Zagné</option>
+                 <option value="Zuenoula">Zuenoula</option>
+             </datalist>
+             <input type="text"
+                    id="quartier"
+                    name="quartier"
+                    placeholder="Indiquez votre quartier"
+                    required>
+             <div class="zone-image">
+                 <label for="images">📷 Ajouter des photos</label>
+                 <input
+                    type="file"
+                    id="images"
+                    accept="image/*"
+                    multiple
+                 >
+                 <div id="apercuImages"></div>
+              </div>
+         </div>
+          <button type="submit">Envoyer la demande</button>
+          <p id="messageDemande" role="status" aria-live="polite"></p>
+     </form>
+    </section>
+    </nav>
+    <footer id="footer">
+        <a href="index.html" class="footer-icon" aria-label="Accueil" title="Accueil"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
+        <a href="services.html" class="footer-icon" aria-label="Services" title="Services"><i class="fa-solid fa-toolbox" aria-hidden="true"></i></a>
+        <a href="historique.html" class="footer-icon" aria-label="Historique" title="Historique"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></a>
+        <a href="messages.html" class="footer-icon" aria-label="Messages" title="Messages"><i class="fa-solid fa-comments" aria-hidden="true"></i></a>
+        <a href="profil.html" class="footer-icon" aria-label="Profil" title="Profil"><i class="fa-solid fa-user" aria-hidden="true"></i></a>
+    </footer>
+    <button id="boutonInstallerApplication" type="button" hidden>Installer l'application</button>
+    <script src="../js/app.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/annuaire.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>

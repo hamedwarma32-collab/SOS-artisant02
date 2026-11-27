@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#007bff">
+    <link rel="manifest" href="../manifest.json">
+    <title>Inscription | SOS Artisan</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header id="messi">
+        <a href="index.html" aria-label="Retour à l'accueil">
+            <img src="../images/IMG_E1718.JPG" alt="SOS Artisan" width="80">
+        </a>
+        <nav id="menu">
+            <a href="index.html" class="inscription-link">Accueil</a>
+        </nav>
+    </header>
+
+    <main class="inscription-page">
+        <h1>Créer un compte</h1>
+        <p>Inscrivez-vous pour trouver un artisan ou proposer vos services.</p>
+        <form id="formulaireInscription">
+            <div class="inscription-grid">
+                <label>
+                    Nom
+                    <input type="text" name="nom" autocomplete="family-name" required>
+                </label>
+                <label>
+                    Prénom
+                    <input type="text" name="prenom" autocomplete="given-name" required>
+                </label>
+                <label>
+                    Téléphone
+                    <input type="tel" name="telephone" autocomplete="tel" placeholder="+225 07 00 00 00 00" required>
+                </label>
+                <label>
+                    Adresse e-mail
+                    <input type="email" name="email" autocomplete="email" required>
+                </label>
+                <label>
+                    Type de compte
+                    <select id="typeCompte" name="typeCompte" required>
+                        <option value="" disabled selected>Choisissez un type de compte</option>
+                        <option value="client">Je cherche un artisan</option>
+                        <option value="artisan">Je suis artisan</option>
+                    </select>
+                </label>
+                <label>
+                    Ville
+                    <input type="text"
+                           name="ville"
+                           list="villesCoteDIvoire"
+                           placeholder="Ville ou commune"
+                           autocomplete="address-level2"
+                           required>
+                    <datalist id="villesCoteDIvoire">
+                        <option>Abengourou</option>
+                        <option>Abidjan</option>
+                        <option>Aboisso</option>
+                        <option>Adiaké</option>
+                        <option>Adzopé</option>
+                        <option>Afféry</option>
+                        <option>Agboville</option>
+                        <option>Agnibilékrou</option>
+                        <option>Akoupé</option>
+                        <option>Alépé</option>
+                        <option>Anyama</option>
+                        <option>Arrah</option>
+                        <option>Attécoubé</option>
+                        <option>Bangolo</option>
+                        <option>Bédiala</option>
+                        <option>Béoumi</option>
+                        <option>Bettié</option>
+                        <option>Biankouma</option>
+                        <option>Bingerville</option>
+                        <option>Bloléquin</option>
+                        <option>Bongouanou</option>
+                        <option>Bondoukou</option>
+                        <option>Botro</option>
+                        <option>Bouaflé</option>
+                        <option>Bouaké</option>
+                        <option>Bouna</option>
+                        <option>Boundiali</option>
+                        <option>Dabakala</option>
+                        <option>Dabou</option>
+                        <option>Daloa</option>
+                        <option>Danané</option>
+                        <option>Daoukro</option>
+                        <option>Dimbokro</option>
+                        <option>Divo</option>
+                        <option>Doropo</option>
+                        <option>Duékoué</option>
+                        <option>Facobly</option>
+                        <option>Ferkessédougou</option>
+                        <option>Fresco</option>
+                        <option>Gagnoa</option>
+                        <option>Grand-Bassam</option>
+                        <option>Grand-Lahou</option>
+                        <option>Guiglo</option>
+                        <option>Guitry</option>
+                        <option>Issia</option>
+                        <option>Jacqueville</option>
+                        <option>Katiola</option>
+                        <option>Kong</option>
+                        <option>Korhogo</option>
+                        <option>Kouto</option>
+                        <option>Lakota</option>
+                        <option>M'Bahiakro</option>
+                        <option>Man</option>
+                        <option>Mankono</option>
+                        <option>Marcory</option>
+                        <option>Maféré</option>
+                        <option>Minignan</option>
+                        <option>N'Douci</option>
+                        <option>Odienné</option>
+                        <option>Oumé</option>
+                        <option>Port-Bouët</option>
+                        <option>Prikro</option>
+                        <option>Sassandra</option>
+                        <option>San-Pédro</option>
+                        <option>Séguéla</option>
+                        <option>Sipilou</option>
+                        <option>Soubré</option>
+                        <option>Tabou</option>
+                        <option>Tafiré</option>
+                        <option>Tanda</option>
+                        <option>Tiassalé</option>
+                        <option>Tingréla</option>
+                        <option>Touba</option>
+                        <option>Toulepleu</option>
+                        <option>Toumodi</option>
+                        <option>Vavoua</option>
+                        <option>Yamoussoukro</option>
+                        <option>Zagné</option>
+                        <option>Zuenoula</option>
+                    </datalist>
+                </label>
+                <label>
+                    Quartier
+                    <input type="text" name="quartier" autocomplete="address-level3" required>
+                </label>
+                <label>
+                    Adresse (facultatif)
+                    <input type="text" name="adresse" autocomplete="street-address">
+                </label>
+                <label id="champSpecialite" class="full-width">
+                    Métier ou spécialité (pour les artisans)
+                    <select id="specialite" name="specialite">
+                        <option value="" disabled selected>Choisissez votre métier</option>
+                        <option value="Plomberie">Plomberie</option>
+                        <option value="Électricité">Électricité</option>
+                        <option value="Climatisation">Climatisation</option>
+                        <option value="Maçonnerie">Maçonnerie</option>
+                        <option value="Menuiserie">Menuiserie</option>
+                        <option value="Peinture">Peinture</option>
+                        <option value="Serrurerie">Serrurerie</option>
+                        <option value="Mécanique auto">Mécanique auto</option>
+                        <option value="Jardinage">Jardinage</option>
+                        <option value="Couture">Couture</option>
+                        <option value="Nettoyage">Nettoyage</option>
+                    </select>
+                </label>
+                <label id="champPhoto" class="full-width" hidden>
+                    Photo de l'artisan
+                    <input id="photoArtisan" type="file" name="photoArtisan" accept="image/*">
+                    <img id="apercuPhotoArtisan" alt="Aperçu de la photo de l'artisan" hidden>
+                </label>
+                <label class="full-width">
+                    Mot de passe
+                    <input type="password" name="motDePasse" autocomplete="new-password" minlength="10" required>
+                </label>
+                <label class="full-width">
+                    Confirmer le mot de passe
+                    <input type="password" name="confirmationMotDePasse" autocomplete="new-password" minlength="10" required>
+                </label>
+            </div>
+            <label class="consentement">
+                <input type="checkbox" name="consentement" required>
+                <span>J'accepte les conditions d'utilisation de ce formulaire de démonstration.</span>
+            </label>
+            <label id="autorisationAnnuaire" class="consentement" hidden>
+                <input type="checkbox" name="publicationAnnuaire">
+                <span>J'accepte que ma photo, mon nom, mon métier, ma ville, mon quartier et mon téléphone soient visibles dans la recherche locale.</span>
+            </label>
+            <button type="submit">Créer mon compte</button>
+            <p class="info-inscription">Votre compte est enregistré sur le serveur. Le profil artisan est publié uniquement avec votre accord. Utilisez un mot de passe d'au moins 10 caractères.</p>
+            <p id="messageInscription" role="status" aria-live="polite"></p>
+        </form>
+        <p class="retour-accueil"><a href="index.html">Retour à l'accueil</a></p>
+    </main>
+    <button id="boutonInstallerApplication" type="button" hidden>Installer l'application</button>
+    <script src="../js/app.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/inscription.js"></script>
+</body>
+</html>
