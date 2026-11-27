@@ -1,4 +1,4 @@
-const CACHE_NAME = "sos-artisan-v3";
+const CACHE_NAME = "sos-artisan-v4";
 const URLS_A_METTRE_EN_CACHE = [
   "./",
   "./html/index.html",
@@ -23,6 +23,11 @@ const URLS_A_METTRE_EN_CACHE = [
   "./js/messages.js",
   "./js/app.js",
   "./manifest.json",
+  "./assets/fontawesome/css/all.min.css",
+  "./assets/fontawesome/webfonts/fa-brands-400.woff2",
+  "./assets/fontawesome/webfonts/fa-regular-400.woff2",
+  "./assets/fontawesome/webfonts/fa-solid-900.woff2",
+  "./assets/fontawesome/webfonts/fa-v4compatibility.woff2",
   "./images/icon-192.png",
   "./images/icon-512.png"
 ];

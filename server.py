@@ -190,8 +190,8 @@ def add_security_headers(response):
     response.headers["Permissions-Policy"] = "geolocation=(self)"
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; script-src 'self'; "
-        "style-src 'self' https://cdnjs.cloudflare.com; "
-        "img-src 'self' data: blob:; font-src 'self' https://cdnjs.cloudflare.com; "
+        "style-src 'self'; "
+        "img-src 'self' data: blob:; font-src 'self'; "
         "connect-src 'self' https://api.bigdatacloud.net; "
         "frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
     )
@@ -243,7 +243,7 @@ def static_files(filename):
     allowed_root_files = {"style.css", "manifest.json", "sw.js"}
     if filename in allowed_root_files:
         return send_from_directory(str(ROOT), filename)
-    if filename.startswith(("html/", "js/", "images/")):
+    if filename.startswith(("html/", "js/", "images/", "assets/")):
         return send_from_directory(str(ROOT), filename)
     return json_error("Fichier introuvable.", 404)
 
