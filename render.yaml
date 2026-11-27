@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: sos-artisant
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --workers 2 --bind 0.0.0.0:$PORT server:app
+    envVars:
+      - key: DATABASE_PATH
+        value: /var/data/sos-artisan.sqlite3
+      - key: COOKIE_SECURE
+        value: "true"
