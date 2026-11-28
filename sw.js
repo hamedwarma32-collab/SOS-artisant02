@@ -1,4 +1,4 @@
-const CACHE_NAME = "sos-artisan-v6";
+const CACHE_NAME = "sos-artisan-v5";
 const URLS_A_METTRE_EN_CACHE = [
   "./",
   "./html/index.html",

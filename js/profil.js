@@ -7,9 +7,7 @@
     try {
         const resultat = await window.sosApi.request("/api/me");
         const compte = resultat.user;
-        etatProfil.textContent = resultat.local
-            ? "Votre compte est enregistré localement dans ce navigateur."
-            : "Votre compte est enregistré sur le serveur.";
+        etatProfil.textContent = "Votre compte est enregistré sur le serveur.";
         detailsProfil.hidden = false;
         boutonDeconnexion.hidden = false;
         if (compte.typeCompte === "admin") lienAdministration.hidden = false;
