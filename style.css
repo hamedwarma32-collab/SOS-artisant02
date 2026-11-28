@@ -20,6 +20,143 @@ body::before{
     filter: brightness(0.3);
     z-index: -1;
 }
+.accueil-page::before {
+    animation: zoomAccueil 16s ease-in-out infinite alternate;
+}
+
+@keyframes zoomAccueil {
+    from {
+        transform: scale(1);
+        filter: brightness(0.3);
+    }
+    to {
+        transform: scale(1.06);
+        filter: brightness(0.42);
+    }
+}
+
+#messi {
+    animation: descenteAccueil 0.7s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.accueil-page main h1 {
+    animation: apparitionTitre 0.85s 0.15s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.accueil-page main > p {
+    animation: apparitionTitre 0.85s 0.3s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.accueil-page #bouton {
+    animation: apparitionCarte 0.7s 0.45s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.accueil-page .bouton-specialites {
+    position: relative;
+    overflow: hidden;
+}
+
+.accueil-page .bouton-specialites::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -35%;
+    width: 22%;
+    height: 160%;
+    background: rgba(255, 255, 255, 0.38);
+    transform: rotate(20deg);
+    animation: refletBouton 3.2s 1.2s ease-in-out infinite;
+}
+
+.accueil-page .localisation-client,
+.accueil-page .resultats-recherche,
+.accueil-page .demande-artisan {
+    box-shadow: 0 16px 38px rgba(10, 55, 95, 0.16);
+    animation: apparitionCarte 0.75s 0.55s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.accueil-page .logo-contrainer img {
+    animation: flottementLogo 3.8s ease-in-out infinite;
+}
+
+.accueil-page #footer .footer-icon {
+    animation: monteIcone 0.55s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.accueil-page #footer .footer-icon:nth-child(1) { animation-delay: 0.65s; }
+.accueil-page #footer .footer-icon:nth-child(2) { animation-delay: 0.72s; }
+.accueil-page #footer .footer-icon:nth-child(3) { animation-delay: 0.79s; }
+.accueil-page #footer .footer-icon:nth-child(4) { animation-delay: 0.86s; }
+.accueil-page #footer .footer-icon:nth-child(5) { animation-delay: 0.93s; }
+
+@keyframes descenteAccueil {
+    from {
+        opacity: 0;
+        transform: translateY(-28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes apparitionTitre {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes apparitionCarte {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes flottementLogo {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-5px) rotate(-1deg);
+    }
+}
+
+@keyframes refletBouton {
+    0%, 55% {
+        left: -35%;
+        opacity: 0;
+    }
+    65% {
+        opacity: 1;
+    }
+    82%, 100% {
+        left: 125%;
+        opacity: 0;
+    }
+}
+
+@keyframes monteIcone {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 #menu{
     display: flex;
     text-align: center;
