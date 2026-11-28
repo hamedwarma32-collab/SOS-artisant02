@@ -110,7 +110,7 @@ def token_hash(token):
 
 
 def session_cookie_options():
-    secure = os.environ.get("COOKIE_SECURE", "false").lower() == "true"
+    secure = os.environ.get("COOKIE_SECURE", "true").lower() == "true"
     return {
         "httponly": True,
         "secure": secure,
@@ -539,7 +539,7 @@ def run():
         print("Base de données initialisée.")
         return
     initialize_database()
-    app.run(host=os.environ.get("HOST", "0.0.0.0"), port=int(os.environ.get("PORT", "8000")))
+    app.run(host="127.0.0.1", port=int(os.environ.get("PORT", "8000")))
 
 
 if __name__ == "__main__":
