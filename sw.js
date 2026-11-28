@@ -1,4 +1,4 @@
-const CACHE_NAME = "sos-artisan-v5";
+const CACHE_NAME = "sos-artisan-v4";
 const URLS_A_METTRE_EN_CACHE = [
   "./",
   "./html/index.html",
@@ -60,17 +60,17 @@ self.addEventListener("fetch", function (event) {
   }
 
   event.respondWith(
-    fetch(event.request).then(function (reponse) {
-      if (reponse.ok && reponse.type === "basic") {
-        const copie = reponse.clone();
-        caches.open(CACHE_NAME).then(function (cache) {
-          cache.put(event.request, copie);
-        });
-      }
-      return reponse;
-    }).catch(function () {
-      return caches.match(event.request).then(function (reponseEnCache) {
-        if (reponseEnCache) return reponseEnCache;
+    caches.match(event.request).then(function (reponseEnCache) {
+      if (reponseEnCache) return reponseEnCache;
+      return fetch(event.request).then(function (reponse) {
+        if (reponse.ok && reponse.type === "basic") {
+          const copie = reponse.clone();
+          caches.open(CACHE_NAME).then(function (cache) {
+            cache.put(event.request, copie);
+          });
+        }
+        return reponse;
+      }).catch(function () {
         if (event.request.mode === "navigate") {
           return caches.match("./html/index.html");
         }
