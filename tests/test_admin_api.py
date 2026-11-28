@@ -36,7 +36,17 @@ class AdminApiTests(unittest.TestCase):
 
     def test_server_files_are_not_publicly_served(self):
         self.assertEqual(self.client.get("/server.py").status_code, 404)
-        self.assertEqual(self.client.get("/html/admin.html").status_code, 200)
+        admin_page = self.client.get("/html/admin.html")
+        self.assertEqual(admin_page.status_code, 200)
+        admin_page.close()
+
+    def test_home_redirects_to_the_html_entrypoint(self):
+        response = self.client.get("/")
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.headers["Location"], "/html/index.html")
+        index_page = self.client.get(response.headers["Location"])
+        self.assertEqual(index_page.status_code, 200)
+        index_page.close()
 
     def test_admin_can_manage_users_and_cannot_disable_self(self):
         with server.connect_database() as database:

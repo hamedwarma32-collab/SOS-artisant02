@@ -11,7 +11,7 @@ import hashlib
 from functools import wraps
 from pathlib import Path
 
-from flask import Flask, g, jsonify, request, send_from_directory
+from flask import Flask, g, jsonify, redirect, request, send_from_directory
 from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -235,7 +235,7 @@ def require_admin(function):
 
 @app.get("/")
 def home():
-    return send_from_directory(str(ROOT / "html"), "index.html")
+    return redirect("/html/index.html")
 
 
 @app.get("/<path:filename>")
